@@ -1,17 +1,3 @@
-<div class="masthead clearfix">
-  <div class="inner">
-    <h3 class="masthead-brand">Temple-Stay</h3>
-    <nav>
-      <ul class="nav masthead-nav">
-        <li><a href="/">Home</a></li>
-        <li><a href="/details">Details</a></li>
-        <li><a href="/schedule">Schedule</a></li>
-        <li class="active"><a href="/faq">FAQ</a></li>
-      </ul>
-    </nav>
-  </div>
-</div>
-
 <div id="faq-container">
   <h4>How do I get to Seun Gak Sa?</h4>
   <p>If you are flying in from a different city, someone from KAYBO will pick you up from LAX.</p>
@@ -22,3 +8,9 @@
   <h4>How many people are coming?</h4>
   <p>We'd love to accommodate everyone, but the space is limited to 40 people.</p>
 </div>
+
+<% content_for :js do %>
+  <script>
+    $("#nav-faq").addClass("active");
+  </script>
+<% end %>

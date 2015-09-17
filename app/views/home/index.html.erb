@@ -1,22 +1,16 @@
-<div class="masthead clearfix">
-  <div class="inner">
-    <h3 class="masthead-brand">Temple-Stay</h3>
-    <nav>
-      <ul class="nav masthead-nav">
-        <li class="active"><a href="/">Home</a></li>
-        <li><a href="/details">Details</a></li>
-        <li><a href="/schedule">Schedule</a></li>
-        <li><a href="/faq">FAQ</a></li>
-      </ul>
-    </nav>
-  </div>
+<div id="index-container">
+  <div class="title">Seun Gak Sa</div>
+  <div class="text">1.15 to 1.18</div>
+  <div class="text">Our next temple stay will be in Los Angeles!</div>
+  <div class="text"><a href="/details" class="btn btn-lg btn-default">Learn more</a></div>
 </div>
 
-<div class="inner cover">
-  <h1 class="cover-heading">Seun Gak Sa</h1>
-  <p class="lead">1.15 to 1.18 </p>
-  <p class="lead">Our next temple stay will be in Los Angeles!</p>
-  <p class="lead">
-    <a href="/details" class="btn btn-lg btn-default">Learn more</a>
-  </p>
-</div>
+<% content_for :js do %>
+  <script>
+    $("#nav-home").addClass("active");
+
+    center_height = $('#center').outerHeight(true);
+
+    $("#index-container").css("padding-top","" + (center_height * 0.35) + "px");
+  </script>
+<% end %>
