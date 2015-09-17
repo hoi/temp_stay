@@ -1,0 +1,154 @@
+/*
+ * Globals
+ */
+
+.clear {
+  clear: both;
+}
+
+
+iframe {
+  border: 0;
+}
+
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #FF9933;
+  text-decoration: none;
+}
+
+/* Custom default button */
+.btn-default,
+.btn-default:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritence from `body` */
+  border: 1px solid #fff;
+}
+
+.btn-default:hover {
+  color: #FF9933;
+  text-shadow: none; /* Prevent inheritence from `body` */
+  border: 1px solid #fff;
+}
+
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+  background-color: #333;
+}
+body {
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+
+
+/*
+ * Header
+ */
+#header {
+  #logo {
+    font-size: 30px;
+  }
+
+  #nav {
+    .nav-item {
+      height: 40px;
+      float: left;
+      margin: 10px;
+      font-size: 18px;
+
+      a {
+        color: #CCC;
+      }
+    }
+
+    .nav-item.active {
+      border-bottom: #FF9933 solid thick;
+
+      a{
+        color: #FFF;
+      }
+    }
+
+    .nav-item:hover, .nav-item:focus {
+      border-bottom: #CCC solid thick;
+    }
+  }
+}
+
+
+@media (min-width: 800px) {
+  #site-container {
+    width: 800px;
+    margin: 0 auto;
+  }
+
+  #logo {
+    float: left;
+  }
+
+  #nav {
+    float: right;
+  }
+}
+
+
+@media (min-width: 500px) and (max-width: 800px) {
+  #site-container {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  #logo {
+    float: left;
+  }
+
+  #nav {
+    float: right;
+  }
+}
+
+
+@media (max-width: 500px) {
+  #site-container {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  #logo {
+    width: 100%;
+    text-align: center;
+  }
+
+  #nav {
+    width: 300px;
+    margin: 0 auto;
+    .nav-item {
+      width: 55px;
+    }
+  }
+}
+
+
+/*
+ * Footer
+ */
+
+
+#footer {
+  text-align: center;
+  height: 50px;
+}
+
+
+@media (max-width: 500px) {
+  #footer {
+    display: none;
+  }
+}
