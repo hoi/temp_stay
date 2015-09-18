@@ -1,0 +1,3 @@
+class KoreanController < ApplicationController
+
+end

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Temple-Stay</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="site-container">
+  <div id="header">
+    <div id="logo">Temple Stay</div>
+    <div id="nav">
+      <div id="nav-home" class="nav-item"><a href="/">홈</a></div>
+      <div id="nav-details" class="nav-item"><a href="/ko/details">안내</a></div>
+      <div id="nav-about" class="nav-item"><a href="/ko/about">소개</a></div>
+      <div id="nav-faq" class="nav-item"><a href="/ko/faq">FAQ</a></div>
+      <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+  </div>
+
+  <div id="center">
+    <%= yield %>
+  </div>
+
+  <div id="footer">
+    &copy; Korean American Young Buddhists Organization | <a href="mailto:admin@temple-stay.com">admin@temple-stay.com</a>
+  </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<script>
+  update_footer = function () {
+    $('#center').height("");
+    var current_height = $('#center').outerHeight(true);
+    var window_height = window.innerHeight;
+    var bottom = $('#center').position().top+current_height+50;
+    if (window_height > bottom) {
+      $("#center").height(current_height - bottom +  window_height);
+    }
+  }
+
+  update_footer();
+
+  $(window).resize(update_footer);
+</script>
+
+<%= yield :js %>
+
+</body>
+</html>

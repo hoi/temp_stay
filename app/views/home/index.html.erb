@@ -1,16 +1,17 @@
 <div id="index-container">
-  <div class="title">Seun Gak Sa</div>
-  <div class="text">1.15 to 1.18</div>
-  <div class="text">Our next temple stay will be in Los Angeles!</div>
-  <div class="text"><a href="/details" class="btn btn-lg btn-default">Learn more</a></div>
+  <div class="title">Seun Gak Sa | 선각사</div>
+  <div class="text">1.15 ~ 1.18</div>
+  <div class="buttons"><a href="/en/details" class="btn btn-lg btn-default">English</a><a href="/ko/details" class="btn btn-lg btn-default">한글</a></div>
 </div>
 
 <% content_for :js do %>
   <script>
-    $("#nav-home").addClass("active");
+    window_height = window.innerHeight;
+    container_height = $("#index-container").outerHeight(true);
+    padding = (window_height - container_height) / 2.5
 
-    center_height = $('#center').outerHeight(true);
-
-    $("#index-container").css("padding-top","" + (center_height * 0.35) + "px");
+    if (padding > 0) {
+      $("#index-container").css("padding-top","" + padding + "px");
+    }
   </script>
 <% end %>
