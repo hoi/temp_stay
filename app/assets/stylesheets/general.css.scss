@@ -52,8 +52,11 @@ body {
  * Header
  */
 #header {
+  margin-top: 10px;
   #logo {
-    font-size: 30px;
+    img {
+      height: 50px;
+    }
   }
 
   #nav {
